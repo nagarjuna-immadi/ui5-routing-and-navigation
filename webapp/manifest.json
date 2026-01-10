@@ -35,6 +35,10 @@
 		}
   	},
 	"sap.ui5": {
+		"contentDensities": {
+			"compact": false,
+			"cozy": true
+		},
 		"rootView": {
 			"viewName": "sap.ui.demo.nav.view.App",
 			"type": "XML",
@@ -62,6 +66,33 @@
 			"": {
 				"dataSource": "employeeRemote"
 			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "sap.ui.demo.nav.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "appHome",
+					"target": "home"
+				}
+			],
+			"targets": {
+				"home": {
+					"id": "home",
+					"viewId": "home",
+					"viewName": "Home",
+					"level": 1
+				}
+			}	
 		}
 	}
 }
